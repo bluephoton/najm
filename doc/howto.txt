@@ -1,0 +1,13 @@
+
+> to start jekyll locally:
+cd <emesons root>\docs
+bundle exec jekyll serve
+
+> to test:
+http://localhost:4000
+You need to have environment set to something other then prod in the _config.yml. EX: environment: prod-
+
+> to add centerd image:
+
+![Fig 1](celestial-01.jpg?style=center)
+<p align ="center" style="font-weight:bold;">Figure 1</p>

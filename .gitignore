@@ -11,3 +11,4 @@ SetupDriver/Layout/Najm/Handlers/Imaging
 *.msi
 *.wixobj
 packages
+_site

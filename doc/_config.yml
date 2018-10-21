@@ -1,0 +1,12 @@
+baseurl: 
+title: Najm -  Astronomical image visualization and processing!
+description: 
+environment: prod
+repository: 
+repository: bluephoton.github.io/najm/
+github: [metadata]
+google_analytics: 
+fb_appid: 
+
+gems:
+  - jemoji
