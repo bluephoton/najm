@@ -1,0 +1,37 @@
+[] indicates optional
+LSD = Logical Screen Descriptor
+GCT = Global Color Table
+ID  = Image Descriptor
+LCT = Local Color Table
+PD  = Pixel Data
+GCE = Graphics Control Extension
+CE  = Comment extension
+PTE = Plain Text Extension
+AE  = Application Extension
+GTR = GIF TRailer
+
+----------------------------------------
+Block		Size		Total
+----------------------------------------
+Header		6		0
+LSD		7		13
+GCT		768		781
+
+ID		10		791
+[LCT]		-> 768		->1559
+PD
+GCE		8
+[CE]		vary
+PTE
+AE
+GTR		1
+=========================================================================
+TYPE=ColorMapTypes.X.ToString() 
+<NajmColoMap type="" Bias="" Contrast="">
+<RGB></RGB>
+<LIP>
+	<Red></Red>
+	<Green></Green>
+	<Blue></Blue>
+</LIP>
+</NajmColoMap>

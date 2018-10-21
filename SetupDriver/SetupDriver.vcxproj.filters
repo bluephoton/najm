@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{f85aa199-1878-41a4-aeac-d9c415de3a94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SRC">
+      <UniqueIdentifier>{5b4a7f4c-06c9-4645-9bbd-4b7a5fabe623}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="VCRedist">
+      <UniqueIdentifier>{16e2348d-e13a-40d2-8fc4-876889a7a213}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SampleFITS">
+      <UniqueIdentifier>{66b908de-0af2-4c4c-b08e-721dd648e20d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Setup\Resources\banner.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="Setup\Resources\heic0506b.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Setup\SRC\NajmSetup.warsetup">
+      <Filter>SRC</Filter>
+    </None>
+    <None Include="Setup\SRC\NajmSetup.wxs">
+      <Filter>SRC</Filter>
+    </None>
+    <None Include="Setup\VCRedists\Microsoft_VC90_CRT_x86.msm">
+      <Filter>VCRedist</Filter>
+    </None>
+    <None Include="Setup\SampleFITS\crab_sclrot.fits">
+      <Filter>SampleFITS</Filter>
+    </None>
+    <None Include="Setup\SampleFITS\ft2_first_v1.fits">
+      <Filter>SampleFITS</Filter>
+    </None>
+    <None Include="Setup\SampleFITS\image_v2d_mincount_0.fits.dat">
+      <Filter>SampleFITS</Filter>
+    </None>
+    <None Include="Setup\SampleFITS\m82opt.fits">
+      <Filter>SampleFITS</Filter>
+    </None>
+    <None Include="Setup\SampleFITS\m82rad.fits">
+      <Filter>SampleFITS</Filter>
+    </None>
+    <None Include="Setup\SampleFITS\ngc1316o.fits">
+      <Filter>SampleFITS</Filter>
+    </None>
+    <None Include="Setup\SampleFITS\ngc1316r.fits">
+      <Filter>SampleFITS</Filter>
+    </None>
+    <None Include="Setup\SampleFITS\ngc6503-cube.fits">
+      <Filter>SampleFITS</Filter>
+    </None>
+    <None Include="setup.build.cmd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Layout\dummy.txt" />
+    <Text Include="readme.txt" />
+  </ItemGroup>
+</Project>

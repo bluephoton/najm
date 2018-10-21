@@ -1,0 +1,938 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+
+ p.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	}
+    </style>
+</head>
+<body>
+
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;color:blue;mso-no-proof:yes">using</span><span 
+            style="font-size:10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes"> 
+        System;<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;color:blue;mso-no-proof:yes">using</span><span 
+            style="font-size:10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes"> 
+        System.Collections;<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;color:blue;mso-no-proof:yes">using</span><span 
+            style="font-size:10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes"> 
+        System.Collections.Generic;<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;color:blue;mso-no-proof:yes">using</span><span 
+            style="font-size:10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes"> 
+        System.Text;<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes"><o:p>&nbsp;</o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;color:blue;mso-no-proof:yes">namespace</span><span 
+            style="font-size:10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes"> 
+        Najm.FITS<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">{<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">public</span> <span style="color:blue">enum</span>
+        <span style="color:#2B91AF">HDUTypes</span> { Unknown, Primary, Image, 
+        ASCIITable, BinaryTable, RandomGroup }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">public</span> <span style="color:blue">enum</span>
+        <span style="color:#2B91AF">CardImageType</span> { Blank, KeyValue, Comment, 
+        History, End, Unknown }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">public</span> <span style="color:blue">enum</span>
+        <span style="color:#2B91AF">FieldTypes</span> { Bool =
+        <span style="color:#A31515">&#39;L&#39;</span>, Bits = <span style="color:#A31515">&#39;X&#39;</span>, 
+        Byte = <span style="color:#A31515">&#39;B&#39;</span>, Int16 =
+        <span style="color:#A31515">&#39;I&#39;</span>, Int32 = <span style="color:#A31515">&#39;J&#39;</span>, 
+        Int64 = <span style="color:
+#A31515">&#39;K&#39;</span>, Char = <span style="color:#A31515">&#39;A&#39;</span>, Float =
+        <span style="color:#A31515">&#39;E&#39;</span>, Double = <span style="color:#A31515">&#39;D&#39;</span>, 
+        ComplexF = <span style="color:#A31515">&#39;C&#39;</span>, ComplexD =
+        <span style="color:#A31515">&#39;M&#39;</span> }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes"><o:p>&nbsp;</o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">public</span> <span style="color:blue">struct</span>
+        <span style="color:#2B91AF">Complex</span>&lt;T&gt;<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>{<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">public</span> T _r;<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">public</span> T _i;<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes"><o:p>&nbsp;</o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:green">// Used to represent a bit. Internally we&#39;ll use 
+        BitArray<o:p></o:p></span></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:green">// Idea is to do something like:<o:p></o:p></span></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:green">//<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span>ICellValue&lt;Bit&gt; bits;<o:p></o:p></span></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:green">//<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span>cell.get(out bits)<o:p></o:p></span></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">public</span> <span style="color:blue">struct</span>
+        <span style="color:#2B91AF">Bit</span> {<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">public</span> Bit(<span style="color:blue">bool</span> 
+        val) { _val = val; }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">public</span> <span style="color:blue">bool</span> 
+        Value { <span style="color:blue">get</span> { <span style="color:blue">return</span> 
+        _val; } }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">private</span> <span style="color:blue">bool</span> 
+        _val;<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes"><o:p>&nbsp;</o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">public</span> <span style="color:blue">interface</span>
+        <span style="color:#2B91AF">ICellValue</span>&lt;T&gt;<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>{<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">int</span> Depth { <span style="color:blue">get</span>; 
+        }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        T <span style="color:blue">this</span>[<span style="color:blue">int</span> 
+        index] { <span style="color:blue">get</span>; }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        T[] Vector { <span style="color:blue">get</span>; }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes"><o:p>&nbsp;</o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">public</span> <span style="color:blue">interface</span>
+        <span style="color:#2B91AF">ITableCell<o:p></o:p></span></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>{<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">void</span> get&lt;T&gt;(<span style="color:blue">out</span> 
+        ICellValue&lt;T&gt; val);<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">int</span> Depth { <span style="color:blue">get</span>; 
+        }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes"><o:p>&nbsp;</o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">public</span> <span style="color:blue">interface</span>
+        <span style="color:#2B91AF">ITableRow</span> : <span style="color:#2B91AF">
+        IEnumerable</span>&lt;ITableCell&gt;<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>{<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        ITableCell <span style="color:blue">this</span>[<span style="color:blue">int</span> 
+        index] { <span style="color:blue">get</span>; }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        ITableCell <span style="color:blue">this</span>[<span style="color:blue">string</span> 
+        name] { <span style="color:blue">get</span>; }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes"><o:p>&nbsp;</o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">public</span> <span style="color:blue">interface</span>
+        <span style="color:#2B91AF">IFieldInfo<o:p></o:p></span></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>{<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">string</span> Name { <span style="color:blue">get</span>; 
+        }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">int</span> Index { <span style="color:blue">get</span>; 
+        }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">long</span> Size { <span style="color:blue">get</span>; 
+        }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">double</span> Zero { <span style="color:blue">get</span>; 
+        }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">double</span> Scale { <span style="color:blue">get</span>; 
+        }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">string</span> NULL { <span style="color:blue">get</span>; 
+        }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">string</span> Unit { <span style="color:blue">get</span>; 
+        }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        FieldTypes Type { <span style="color:blue">get</span>; }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        ITableHeader Header { <span style="color:blue">get</span>; }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes"><o:p>&nbsp;</o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">public</span> <span style="color:blue">interface</span>
+        <span style="color:#2B91AF">ITableHeader</span> : <span style="color:#2B91AF">
+        IEnumerable</span>&lt;IFieldInfo&gt;<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>{<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">int</span> FieldsCount { <span style="color:blue">get</span>; 
+        }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        IFieldInfo <span style="color:blue">this</span>[<span style="color:blue">int</span> 
+        index] { <span style="color:blue">get</span>; }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        IFieldInfo <span style="color:blue">this</span>[<span style="color:blue">string</span> 
+        name] { <span style="color:blue">get</span>; }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        ITable Table { <span style="color:blue">get</span>; }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes"><o:p>&nbsp;</o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">public</span> <span style="color:blue">interface</span>
+        <span style="color:#2B91AF">ITable</span> : <span style="color:#2B91AF">
+        IEnumerable</span>&lt;ITableRow&gt;<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>{<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        ITableHeader Header { <span style="color:blue">get</span>; }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        ITableRow <span style="color:blue">this</span>[<span style="color:blue">long</span> 
+        index] { <span style="color:blue">get</span>; }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">long</span> Length { <span style="color:blue">get</span>; 
+        }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        IHDU HDU { <span style="color:blue">get</span>; }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp; &nbsp;&nbsp;</span>}<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes"><o:p>&nbsp;</o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">public</span> <span style="color:blue">interface</span>
+        <span style="color:#2B91AF">ICardImage<o:p></o:p></span></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>{<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">string</span> Key { <span style="color:blue">get</span>; 
+        }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-tab-count:
+2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">string</span> Value { <span style="color:blue">get</span>; 
+        }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-tab-count:
+2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">string</span> Comment { <span style="color:blue">get</span>; 
+        }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-tab-count:
+2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">string</span> InfoText { <span style="color:blue">get</span>; 
+        }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes"><o:p>&nbsp;</o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">public</span> <span style="color:blue">interface</span>
+        <span style="color:#2B91AF">IHeader<o:p></o:p></span></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>{<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        ICardImage[] CardImages { <span style="color:blue">get</span>; }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        ICardImage <span style="color:blue">this</span>[<span style="color:blue">int</span> 
+        index] { <span style="color:blue">get</span>; }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        ICardImage <span style="color:blue">this</span>[<span style="color:blue">string</span> 
+        name] { <span style="color:blue">get</span>; }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">string</span> FullText { <span style="color:blue">get</span>; 
+        }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">string</span> SummaryText { <span style="color:blue">
+        get</span>; }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes"><o:p>&nbsp;</o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">public</span> <span style="color:blue">interface</span>
+        <span style="color:#2B91AF">IDataMngr<o:p></o:p></span></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>{<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">int</span> BitsPerPixel { <span style="color:blue">get</span>; 
+        }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">byte</span>[] RawData { <span style="color:blue">get</span>; 
+        }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">long</span> RawDataSize { <span style="color:blue">get</span>; 
+        }<span style="mso-spacerun:yes">&nbsp;&nbsp; </span><span style="color:green">// 
+        more effecient than RawData.Length as it gets the size without actually loadins 
+        the data<o:p></o:p></span></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">double</span>[] Data { <span style="color:blue">get</span>; 
+        }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">long</span> DataSize { <span style="color:blue">get</span>; 
+        }<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:green">// more effecient than Data.Length as it gets the size 
+        without actually loadins the data<o:p></o:p></span></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">double</span> BlankValue { <span style="color:blue">get</span>; 
+        }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">double</span> Maximum { <span style="color:blue">get</span>; 
+        }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">double</span> Minimum { <span style="color:blue">get</span>; 
+        }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">uint</span> NumSlices { <span style="color:blue">get</span>; 
+        }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">uint</span> CurrentSlice { <span style="color:blue">get</span>;
+        <span style="color:blue">set</span>; }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        IHDU HDU { <span style="color:blue">get</span>; }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes"><o:p>&nbsp;</o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">public</span> <span style="color:blue">interface</span>
+        <span style="color:#2B91AF">IAxis<o:p></o:p></span></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>{<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color:blue">int</span> 
+        Sequence { <span style="color:blue">get</span>; }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">int</span> NumPoints { <span style="color:blue">get</span>; 
+        }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">string</span> Type { <span style="color:blue">get</span>; 
+        }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">string</span> InfoText { <span style="color:blue">get</span>; 
+        }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes"><o:p>&nbsp;</o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">public</span> <span style="color:blue">interface</span>
+        <span style="color:#2B91AF">IHDU<o:p></o:p></span></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>{<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">int</span> Index { <span style="color:blue">get</span>; 
+        }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">string</span> Name { <span style="color:blue">get</span>; 
+        }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        HDUTypes Type { <span style="color:
+blue">get</span>; }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">bool</span> HasData { <span style="color:blue">get</span>; 
+        }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">bool</span> IsTable { <span style="color:blue">get</span>; 
+        }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">bool</span> IsImage { <span style="color:blue">get</span>; 
+        }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes"><o:p>&nbsp;</o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        IHeader Header { <span style="color:blue">get</span>; }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        IDataMngr DataMngr { <span style="color:blue">get</span>; }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes"><o:p>&nbsp;</o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        IAxis[] Axes { <span style="color:blue">get</span>; }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes"><o:p>&nbsp;</o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">byte</span>[] Heap { <span style="color:blue">get</span>; 
+        }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes"><o:p>&nbsp;</o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        ITable Table { <span style="color:blue">get</span>; }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes"><o:p>&nbsp;</o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        IFITSFile File { <span style="color:blue">get</span>; }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes"><o:p>&nbsp;</o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">public</span> <span style="color:blue">interface</span>
+        <span style="color:#2B91AF">IFITSFile<o:p></o:p></span></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>{<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">void</span> Load(<span style="color:blue">string</span> 
+        fileName);<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">void</span> Save();<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">void</span> Save(<span style="color:blue">string</span> 
+        fileName);<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:blue">string</span> Name { <span style="color:blue">get</span>; 
+        }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        IHDU <span style="color:blue">this</span>[<span style="color:blue">int</span> 
+        index] { <span style="color:blue">get</span>; }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        IHDU <span style="color:blue">this</span>[<span style="color:blue">string</span> 
+        hduName] { <span style="color:blue">get</span>; }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        IHDU[] HDUs { <span style="color:blue">get</span>; }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+        <span style="color:#2B91AF">IntPtr</span> Handle { <span style="color:blue">get</span>; 
+        }<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">
+        <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">
+        <span style="font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-no-proof:yes">}<o:p></o:p></span></p>
+    <p class="MsoNormal">
+        <o:p>&nbsp;</o:p></p>
+
+</body>
+</html>

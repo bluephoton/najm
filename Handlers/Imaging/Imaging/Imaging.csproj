@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E105EA50-1705-49C6-8B0C-09CED61B561B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Imaging</RootNamespace>
+    <AssemblyName>Najm.Handler.Imaging</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\Application\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\Application\bin\release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug-Linux|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug-Linux\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Annotation.cs" />
+    <Compile Include="Histogram.cs" />
+    <Compile Include="ImageHandler.cs" />
+    <Compile Include="PerfTest.cs" />
+    <Compile Include="UI\HandlerUI\ihUIModel.cs" />
+    <Compile Include="UI\HandlerUI\ImageHandlerUI.AdvancedTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\HandlerUI\ImageHandlerUI.ColorMapTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\HandlerUI\ImageHandlerUI.ColorTableTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\NajmImageBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\NajmImageBox.Designer.cs">
+      <DependentUpon>NajmImageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\HandlerUI\ImageHandlerUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\HandlerUI\ImageHandlerUI.Designer.cs">
+      <DependentUpon>ImageHandlerUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ImagingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ImagingForm.Designer.cs">
+      <DependentUpon>ImagingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\ModelState.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UI\NajmImageBox.resx">
+      <DependentUpon>NajmImageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\HandlerUI\ImageHandlerUI.resx">
+      <DependentUpon>ImageHandlerUI.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ImagingForm.resx">
+      <DependentUpon>ImagingForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hand.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Resources\CopyButton.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ActualSize.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ActualSize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FirstSlice.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PlayBackward.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Play.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LastImage.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Stop.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Controls\Graph\Graph\Histogram.csproj">
+      <Project>{44DA49B0-8558-4607-802F-A209B3E32234}</Project>
+      <Name>Histogram</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Controls\PointsGrid\PointsGrid.csproj">
+      <Project>{F47072AC-9F11-4720-8923-53E9026873ED}</Project>
+      <Name>PointsGrid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\FITSIO\FITSIO\FITSIO.csproj">
+      <Project>{E2617F96-91A9-40C7-AC3A-FE7AACCE9E11}</Project>
+      <Name>FITSIO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Integration\Handlers.Integration.csproj">
+      <Project>{D88EA0F2-395F-4578-B6F9-300C8D6AD299}</Project>
+      <Name>Handlers.Integration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ImagingCore\ImagingCore\ImagingCore.csproj">
+      <Project>{FE890401-6B18-4BF3-82B8-42BB68EA35C3}</Project>
+      <Name>ImagingCore</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ToolstriptImage.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

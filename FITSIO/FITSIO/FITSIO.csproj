@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E2617F96-91A9-40C7-AC3A-FE7AACCE9E11}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Najm.FITSIO</RootNamespace>
+    <AssemblyName>Najm.FITSIO</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FITSFile\HDU\Axis.cs" />
+    <Compile Include="FITSFile\HDU\CardImage.cs" />
+    <Compile Include="FITSFile\DataManager\DataManager.cs" />
+    <Compile Include="FITSFile\WCS\Transformation.cs" />
+    <Compile Include="FITSFile\WCS\WCSAxis.cs" />
+    <Compile Include="FITSFile\WCS\WCSInfo.cs" />
+    <Compile Include="Misc\Exception.cs" />
+    <Compile Include="FITSFile\FITSFile.cs" />
+    <Compile Include="FITSFile\HDU\HDU.cs" />
+    <Compile Include="FITSFile\Tables\CellValue.cs" />
+    <Compile Include="FITSFile\Tables\FieldInfoA.cs" />
+    <Compile Include="FITSFile\Tables\FieldInfoB.cs" />
+    <Compile Include="FITSFile\Tables\FieldInfoBase.cs" />
+    <Compile Include="FITSFile\Tables\HDUTable.cs" />
+    <Compile Include="FITSFile\Tables\TableCellASCII.cs" />
+    <Compile Include="FITSFile\Tables\TableCellBase.cs" />
+    <Compile Include="FITSFile\Tables\TableCellBinary.cs" />
+    <Compile Include="FITSFile\Tables\TableHeader.cs" />
+    <Compile Include="FITSFile\Tables\TableRow.cs" />
+    <Compile Include="Interfaces\IFITS.cs" />
+    <Compile Include="Interfaces\IWCS.cs" />
+    <Compile Include="Misc\NativeAPIs.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FITSFile\DataManager\Slice.cs" />
+    <Compile Include="Misc\Utils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\LinearAlagebra\LinearAlgebra.csproj">
+      <Project>{691DFB27-59AD-4D8A-87CB-3547B24B20F2}</Project>
+      <Name>LinearAlgebra</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

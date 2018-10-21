@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FE890401-6B18-4BF3-82B8-42BB68EA35C3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Najm.ImagingCore</RootNamespace>
+    <AssemblyName>Najm.ImagingCore</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ColorMaps\BaseColorMap.cs" />
+    <Compile Include="ColorMaps\ColorMap.cs" />
+    <Compile Include="ColorMaps\FileColorMap.cs" />
+    <Compile Include="ColorMaps\HardCodedColorMaps.cs" />
+    <Compile Include="ColorMaps\LinearInterpolator.cs" />
+    <Compile Include="ColorMaps\LinIntColormaps.cs" />
+    <Compile Include="ColorMaps\RGBColorMap.cs" />
+    <Compile Include="ColorTable\BaseColorTable.cs" />
+    <Compile Include="ColorTable\ColorTable.cs" />
+    <Compile Include="ColorTable\FullScaleColorTable.cs" />
+    <Compile Include="ColorTable\IndexedColorTable.cs" />
+    <Compile Include="ColorTable\ReducedColorTable.cs" />
+    <Compile Include="ColorTable\SortedArray.cs" />
+    <Compile Include="Image\Image.cs" />
+    <Compile Include="Image\ImageBase.cs" />
+    <Compile Include="Image\IndexedImage.cs" />
+    <Compile Include="Image\TrueColorImage.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScalingAlgorithms\HistogramScaling.cs" />
+    <Compile Include="ScalingAlgorithms\StretchAlgorithm.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\FITSIO\FITSIO\FITSIO.csproj">
+      <Project>{E2617F96-91A9-40C7-AC3A-FE7AACCE9E11}</Project>
+      <Name>FITSIO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

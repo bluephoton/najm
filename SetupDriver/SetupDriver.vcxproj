@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{9F55E690-EEE6-4ED1-95A9-7DA2CD2672AE}</ProjectGuid>
+    <RootNamespace>SetupDriver</RootNamespace>
+    <Keyword>MakeFileProj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>11.0.60315.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <NMakeBuildCommandLine>setup.build.cmd $(SolutionDir) $(Configuration)</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>setup.rebuild.cmd $(SolutionDir) $(Configuration)</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>setup.clean.cmd $(SolutionDir) $(Configuration)</NMakeCleanCommandLine>
+    <NMakeOutput />
+    <NMakePreprocessorDefinitions>WIN32;_DEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <NMakeBuildCommandLine>setup.build.cmd $(SolutionDir) $(Configuration)</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>setup.build.cmd $(SolutionDir) $(Configuration)</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>setup.clean.cmd $(SolutionDir) $(Configuration)</NMakeCleanCommandLine>
+    <NMakeOutput />
+    <NMakePreprocessorDefinitions>WIN32;NDEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Image Include="Setup\Resources\banner.bmp" />
+    <Image Include="Setup\Resources\heic0506b.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Setup\SRC\NajmSetup.warsetup" />
+    <None Include="Setup\SRC\NajmSetup.wxs">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Setup\VCRedists\Microsoft_VC90_CRT_x86.msm" />
+    <None Include="Setup\SampleFITS\crab_sclrot.fits" />
+    <None Include="Setup\SampleFITS\ft2_first_v1.fits" />
+    <None Include="Setup\SampleFITS\image_v2d_mincount_0.fits.dat" />
+    <None Include="Setup\SampleFITS\m82opt.fits" />
+    <None Include="Setup\SampleFITS\m82rad.fits" />
+    <None Include="Setup\SampleFITS\ngc1316o.fits" />
+    <None Include="Setup\SampleFITS\ngc1316r.fits" />
+    <None Include="Setup\SampleFITS\ngc6503-cube.fits" />
+    <None Include="setup.build.cmd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Layout\dummy.txt" />
+    <Text Include="readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Application\Application.csproj">
+      <Project>{af26ed4e-55e8-4e06-8b12-7b823740722a}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Handlers\Default\Default\Default.csproj">
+      <Project>{f6e18af3-10b8-480f-92df-021a184deee1}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Handlers\Imaging\Imaging\Imaging.csproj">
+      <Project>{e105ea50-1705-49c6-8b0c-09ced61b561b}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Handlers\IPython\IPython\IPython.csproj">
+      <Project>{4fe9ffee-f611-428c-a294-09f872abfc1d}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Handlers\Tables\Tables\Tables.csproj">
+      <Project>{bf226d28-87c4-4462-9b3e-399c18b8b1e5}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,12 @@
+.vs
+bin
+obj
+debug
+release
+SetupDriver/Layout/Najm/Handlers/Default
+SetupDriver/Layout/Najm/Handlers/IPythonW
+SetupDriver/Layout/Najm/Handlers/Imaging
+SetupDriver/Layout/Najm/Handlers/Tables
+SetupDriver/Layout/Najm/Handlers/Imaging
+SetupDriver/out
+packages

@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WarSetup-Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" projectRunAfterInstall="true" mainTargetApp="ID_73e09eba_0995_4b25_b9dd_1fdbeb758862" nextUniqueId="2322" projectName="Najm" projectUuid="1ce4ee10-6243-46d6-a572-615ea6706f96" projectUpgradeUuid="a7273372-58f1-43fc-b74a-f89935e478e4" projectVersion="1.0.0" projectOrganization="AstroPearls" projectFromWindowsVersion="Windows XP" projectMustBeAdministratorToInstall="false" project64BitTarget="false" projectTargetDirectory="..\..\Out\" projectTargetName="NajmSetup" projectType="0" projectUserInterface="WixUI_Mondo">
+  <LicencePaths>
+    <string>C:\Program Files\Jgaa's Internet\War Setup\Licenses</string>
+  </LicencePaths>
+  <Virgin>false</Virgin>
+  <projectFeatures featureId="ID064BF3C7FF6AA5B1AFB9548A0812D5D5" featureName="Najm" featureDescription="The complete package" configurableDirectory="APPLICATIONFOLDER" configurableDirectoryDefaultPath="[ProjectName]" enableInDefaultInstall="true" enableInMinimalInstall="true" excludeFromBuild="false">
+    <childFeatures featureId="PROGRAM" featureName="Najm Main Application" featureDescription="Program main files" configurableDirectory="NAJM_BIN_DIR" configurableDirectoryDefaultPath="[APPLICATIONFOLDER]\Bin" enableInDefaultInstall="true" enableInMinimalInstall="true" excludeFromBuild="false">
+      <components componentId="ID1001" componentGuid="2c0ecb29-02ea-450f-a700-b6c1d93c3ca1">
+        <componentFiles fileId="ID_73e09eba_0995_4b25_b9dd_1fdbeb758862" srcName="Najm.exe" srcDirectory="..\..\Layout\Najm\Bin" dstName="Najm.exe" dstPath="" isTrueTypeFont="false" isComModule="false" typelibGuid="" menuName="Najm" shortcutInProgramFilesMenu="true" shortcutOnDesktop="true" shortcutInQuickLaunch="false" shortcutInStartupFolder="false" shortcutWorkingDirectory="[NAJM_BIN_DIR]" shortcutCommandArguments="" shortcutDescription="Launch Najm">
+          <service StartWhenInstalled="true" Remove="both" id="ID1000" isService="false" userAccount="" userPassword="" cmdLineArguments="" errorControl="normal" interactive="false" loadOrderGroup="" serviceName="" startMode="auto" vital="true" />
+        </componentFiles>
+        <addToCreateFolder>false</addToCreateFolder>
+      </components>
+      <components componentId="ID1003" componentGuid="81beb6b7-9bc1-4380-929d-8b35c0aaffbd">
+        <componentFiles fileId="ID_b66312cf_6bda_4053_9443_108f703b659f" srcName="Najm.exe.config" srcDirectory="..\..\Layout\Najm\Bin" dstName="Najm.exe.config" dstPath="" isTrueTypeFont="false" isComModule="false" typelibGuid="" menuName="Najm.exe" shortcutInProgramFilesMenu="false" shortcutOnDesktop="false" shortcutInQuickLaunch="false" shortcutInStartupFolder="false" shortcutWorkingDirectory="" shortcutCommandArguments="" shortcutDescription="">
+          <service StartWhenInstalled="true" Remove="both" id="ID1002" isService="false" userAccount="" userPassword="" cmdLineArguments="" errorControl="normal" interactive="false" loadOrderGroup="" serviceName="" startMode="auto" vital="true" />
+        </componentFiles>
+        <addToCreateFolder>false</addToCreateFolder>
+      </components>
+      <components componentId="ID1005" componentGuid="b160b4e8-8d40-4d32-9238-40d343d59964">
+        <componentFiles fileId="ID_b968d28e_6760_42f7_a631_17f0b6ac9361" srcName="Najm.FITSIO.dll" srcDirectory="..\..\Layout\Najm\Bin" dstName="Najm.FITSIO.dll" dstPath="" isTrueTypeFont="false" isComModule="false" typelibGuid="" menuName="Najm.FITSIO" shortcutInProgramFilesMenu="false" shortcutOnDesktop="false" shortcutInQuickLaunch="false" shortcutInStartupFolder="false" shortcutWorkingDirectory="" shortcutCommandArguments="" shortcutDescription="">
+          <service StartWhenInstalled="true" Remove="both" id="ID1004" isService="false" userAccount="" userPassword="" cmdLineArguments="" errorControl="normal" interactive="false" loadOrderGroup="" serviceName="" startMode="auto" vital="true" />
+        </componentFiles>
+        <addToCreateFolder>false</addToCreateFolder>
+      </components>
+      <components componentId="ID1009" componentGuid="54457ca2-12e7-4d25-8022-ace2b905cf78">
+        <componentFiles fileId="ID_9e984802_df81_4cbb_956b_c8f12f7b0b9c" srcName="Najm.Handlers.Integration.dll" srcDirectory="..\..\Layout\Najm\Bin" dstName="Najm.Handlers.Integration.dll" dstPath="" isTrueTypeFont="false" isComModule="false" typelibGuid="" menuName="Najm.Handlers.Integration" shortcutInProgramFilesMenu="false" shortcutOnDesktop="false" shortcutInQuickLaunch="false" shortcutInStartupFolder="false" shortcutWorkingDirectory="" shortcutCommandArguments="" shortcutDescription="">
+          <service StartWhenInstalled="true" Remove="both" id="ID1008" isService="false" userAccount="" userPassword="" cmdLineArguments="" errorControl="normal" interactive="false" loadOrderGroup="" serviceName="" startMode="auto" vital="true" />
+        </componentFiles>
+        <addToCreateFolder>false</addToCreateFolder>
+      </components>
+      <components componentId="ID1011" componentGuid="5f8fa398-429c-4c4f-b2a8-e21908130b0b">
+        <componentFiles fileId="ID_8712442b_32f1_436f_8038_be37ed202d76" srcName="najm.ico" srcDirectory="..\..\Layout\Najm\Bin" dstName="najm.ico" dstPath="" isTrueTypeFont="false" isComModule="false" typelibGuid="" menuName="najm" shortcutInProgramFilesMenu="false" shortcutOnDesktop="false" shortcutInQuickLaunch="false" shortcutInStartupFolder="false" shortcutWorkingDirectory="" shortcutCommandArguments="" shortcutDescription="">
+          <service StartWhenInstalled="true" Remove="both" id="ID1010" isService="false" userAccount="" userPassword="" cmdLineArguments="" errorControl="normal" interactive="false" loadOrderGroup="" serviceName="" startMode="auto" vital="true" />
+        </componentFiles>
+        <addToCreateFolder>false</addToCreateFolder>
+      </components>
+      <components componentId="ID2285" componentGuid="c1f0cb03-b8e3-405c-8410-7ac6ec03ee7e">
+        <componentFiles fileId="ID_45acd500_d29b_4fd7_b203_ae25c0d2dc61" srcName="Najm.Boost.dll" srcDirectory="..\..\Layout\Najm\Bin" dstName="Najm.Boost.dll" dstPath="" isTrueTypeFont="false" isComModule="false" typelibGuid="" menuName="Najm.Boost" shortcutInProgramFilesMenu="false" shortcutOnDesktop="false" shortcutInQuickLaunch="false" shortcutInStartupFolder="false" shortcutWorkingDirectory="" shortcutCommandArguments="" shortcutDescription="">
+          <service StartWhenInstalled="true" Remove="both" id="ID2284" isService="false" userAccount="" userPassword="" cmdLineArguments="" errorControl="normal" interactive="false" loadOrderGroup="" serviceName="" startMode="auto" vital="true" />
+        </componentFiles>
+        <addToCreateFolder>false</addToCreateFolder>
+      </components>
+      <components componentId="ID2309" componentGuid="c2a8adf3-ef27-4ac8-adb1-b65c822303f2">
+        <componentFiles fileId="ID_7463f0a5_b3db_4c8c_b63b_af019d01a0ef" srcName="Najm.LinearAlgebra.dll" srcDirectory="..\..\Layout\Najm\Bin" dstName="Najm.LinearAlgebra.dll" dstPath="" isTrueTypeFont="false" isComModule="false" typelibGuid="" menuName="Najm.LinearAlgebra" shortcutInProgramFilesMenu="false" shortcutOnDesktop="false" shortcutInQuickLaunch="false" shortcutInStartupFolder="false" shortcutWorkingDirectory="" shortcutCommandArguments="" shortcutDescription="">
+          <service StartWhenInstalled="true" Remove="both" id="ID2308" isService="false" userAccount="" userPassword="" cmdLineArguments="" errorControl="normal" interactive="false" loadOrderGroup="" serviceName="" startMode="auto" vital="true" />
+        </componentFiles>
+        <addToCreateFolder>false</addToCreateFolder>
+      </components>
+      <components componentId="ID2321" componentGuid="eae87cd9-f897-4cc3-a0a0-676932c5dd28">
+        <componentFiles fileId="ID_6b3c76cb_9bda_486b_854a_1e8efffed1e7" srcName="Najm.ImagingCore.dll" srcDirectory="..\..\Layout\Najm\Bin" dstName="Najm.ImagingCore.dll" dstPath="" isTrueTypeFont="false" isComModule="false" typelibGuid="" menuName="Najm.ImagingCore" shortcutInProgramFilesMenu="false" shortcutOnDesktop="false" shortcutInQuickLaunch="false" shortcutInStartupFolder="false" shortcutWorkingDirectory="" shortcutCommandArguments="" shortcutDescription="">
+          <service StartWhenInstalled="true" Remove="both" id="ID2320" isService="false" userAccount="" userPassword="" cmdLineArguments="" errorControl="normal" interactive="false" loadOrderGroup="" serviceName="" startMode="auto" vital="true" />
+        </componentFiles>
+        <addToCreateFolder>false</addToCreateFolder>
+      </components>
+      <defaultInstallMode>3</defaultInstallMode>
+    </childFeatures>
+    <childFeatures featureId="DOCUMENTATION" featureName="Documentation" featureDescription="Product documentation" configurableDirectory="NAJM_DOC_DIR" configurableDirectoryDefaultPath="[APPLICATIONFOLDER]\Docs" enableInDefaultInstall="true" enableInMinimalInstall="true" excludeFromBuild="false">
+      <components componentId="ID1887" componentGuid="f3026ab1-889a-4a55-9c0c-0a71f7f0f6d0">
+        <componentFiles fileId="ID_03195495_24be_4705_80bd_6e7f48645de1" srcName="help.pdf" srcDirectory="..\..\Layout\Najm\Doc" dstName="help.pdf" dstPath="" isTrueTypeFont="false" isComModule="false" typelibGuid="" menuName="help" shortcutInProgramFilesMenu="false" shortcutOnDesktop="false" shortcutInQuickLaunch="false" shortcutInStartupFolder="false" shortcutWorkingDirectory="" shortcutCommandArguments="" shortcutDescription="">
+          <service StartWhenInstalled="true" Remove="both" id="ID1886" isService="false" userAccount="" userPassword="" cmdLineArguments="" errorControl="normal" interactive="false" loadOrderGroup="" serviceName="" startMode="auto" vital="true" />
+        </componentFiles>
+        <addToCreateFolder>false</addToCreateFolder>
+      </components>
+      <defaultInstallMode>3</defaultInstallMode>
+    </childFeatures>
+    <childFeatures featureId="ID9FC68AC0071485AB7A1262211E7BF164" featureName="FITS Samples" featureDescription="Sample FITS Files" configurableDirectory="NAJM_FITS_DIR" configurableDirectoryDefaultPath="[APPLICATIONFOLDER]\SampleFITS" enableInDefaultInstall="true" enableInMinimalInstall="false" excludeFromBuild="false">
+      <defaultInstallMode>3</defaultInstallMode>
+      <directories dirId="ID1841" srcPath="..\SampleFITS" dstPath="SampleFITS" patterns=".*" excludePatterns="" recurse="false" preventEmptyDirectories="false" addToPath="false" ideHeaderFiles="false" ideExecutables="false" ideLibrary="false" ideMicrosoftVisualStudio2003="false" ideMicrosoftVisualStudio2005="false">
+        <pathComponent componentId="ID1840" componentGuid="1d45d768-e173-4567-9d9f-86b68ad8e65d">
+          <addToCreateFolder>false</addToCreateFolder>
+        </pathComponent>
+      </directories>
+    </childFeatures>
+    <childFeatures featureId="ID57365525958768FB9F75E494225D5050" featureName="Handlers" featureDescription="Najm out of the box Handlers" configurableDirectory="NAJM_HANDLERS_ROOT" configurableDirectoryDefaultPath="[APPLICATIONFOLDER]\Handlers" enableInDefaultInstall="true" enableInMinimalInstall="true" excludeFromBuild="false">
+      <childFeatures featureId="IDB099B7C4E4089250E5FEE56436370B5A" featureName="Default Handler" featureDescription="Najm Default Handler. Display FITS header information." configurableDirectory="NAJM_DEFAULTHANDLER_DIR" configurableDirectoryDefaultPath="[APPLICATIONFOLDER]\Handlers\Default" enableInDefaultInstall="true" enableInMinimalInstall="true" excludeFromBuild="false">
+        <components componentId="ID1023" componentGuid="744bee77-9cc5-47b2-864f-dde2bdc5d6ef">
+          <componentFiles fileId="ID_8c919f24_52a9_4703_97ce_9b93aff83d56" srcName="Najm.Handler.Default.dll" srcDirectory="..\..\Layout\Najm\Handlers\Default" dstName="Najm.Handler.Default.dll" dstPath="" isTrueTypeFont="false" isComModule="false" typelibGuid="" menuName="Najm.Handler.Default" shortcutInProgramFilesMenu="false" shortcutOnDesktop="false" shortcutInQuickLaunch="false" shortcutInStartupFolder="false" shortcutWorkingDirectory="" shortcutCommandArguments="" shortcutDescription="">
+            <service StartWhenInstalled="true" Remove="both" id="ID1022" isService="false" userAccount="" userPassword="" cmdLineArguments="" errorControl="normal" interactive="false" loadOrderGroup="" serviceName="" startMode="auto" vital="true" />
+          </componentFiles>
+          <addToCreateFolder>false</addToCreateFolder>
+        </components>
+        <defaultInstallMode>3</defaultInstallMode>
+      </childFeatures>
+      <childFeatures featureId="ID5C58D2D4766E5052D3C71D51D925BAF8" featureName="Imaging Handler" featureDescription="Najm Imaging Handler. Create Images, color mapping, zoom and panning...etc" configurableDirectory="NAJM_IMAGINGHANDLER_DIR" configurableDirectoryDefaultPath="[APPLICATIONFOLDER]\Handlers\Imaging" enableInDefaultInstall="true" enableInMinimalInstall="true" excludeFromBuild="false">
+        <components componentId="ID1025" componentGuid="7de93de0-0790-455a-b7d6-d7ef57ca98c6">
+          <componentFiles fileId="ID_444fb6a7_7bd6_4336_8667_8de95c06ac6d" srcName="Histogram.dll" srcDirectory="..\..\Layout\Najm\Handlers\Imaging" dstName="Histogram.dll" dstPath="" isTrueTypeFont="false" isComModule="false" typelibGuid="" menuName="Graph" shortcutInProgramFilesMenu="false" shortcutOnDesktop="false" shortcutInQuickLaunch="false" shortcutInStartupFolder="false" shortcutWorkingDirectory="" shortcutCommandArguments="" shortcutDescription="">
+            <service StartWhenInstalled="true" Remove="both" id="ID1024" isService="false" userAccount="" userPassword="" cmdLineArguments="" errorControl="normal" interactive="false" loadOrderGroup="" serviceName="" startMode="auto" vital="true" />
+          </componentFiles>
+          <addToCreateFolder>false</addToCreateFolder>
+        </components>
+        <components componentId="ID1027" componentGuid="a871335e-043f-419c-83f1-e52a00e7c1b8">
+          <componentFiles fileId="ID_eadcadcf_19bc_44d8_9654_69eb6da211c5" srcName="Najm.Handler.Imaging.dll" srcDirectory="..\..\Layout\Najm\Handlers\Imaging" dstName="Najm.Handler.Imaging.dll" dstPath="" isTrueTypeFont="false" isComModule="false" typelibGuid="" menuName="Najm.Handler.Imaging" shortcutInProgramFilesMenu="false" shortcutOnDesktop="false" shortcutInQuickLaunch="false" shortcutInStartupFolder="false" shortcutWorkingDirectory="" shortcutCommandArguments="" shortcutDescription="">
+            <service StartWhenInstalled="true" Remove="both" id="ID1026" isService="false" userAccount="" userPassword="" cmdLineArguments="" errorControl="normal" interactive="false" loadOrderGroup="" serviceName="" startMode="auto" vital="true" />
+          </componentFiles>
+          <addToCreateFolder>false</addToCreateFolder>
+        </components>
+        <components componentId="ID1029" componentGuid="c690133f-80ba-45f8-b17f-dd2b5540a07a">
+          <componentFiles fileId="ID_e700b83c_8a64_477a_9995_5ecac1b17e98" srcName="PointsGrid.dll" srcDirectory="..\..\Layout\Najm\Handlers\Imaging" dstName="PointsGrid.dll" dstPath="" isTrueTypeFont="false" isComModule="false" typelibGuid="" menuName="PointsGrid" shortcutInProgramFilesMenu="false" shortcutOnDesktop="false" shortcutInQuickLaunch="false" shortcutInStartupFolder="false" shortcutWorkingDirectory="" shortcutCommandArguments="" shortcutDescription="">
+            <service StartWhenInstalled="true" Remove="both" id="ID1028" isService="false" userAccount="" userPassword="" cmdLineArguments="" errorControl="normal" interactive="false" loadOrderGroup="" serviceName="" startMode="auto" vital="true" />
+          </componentFiles>
+          <addToCreateFolder>false</addToCreateFolder>
+        </components>
+        <defaultInstallMode>3</defaultInstallMode>
+      </childFeatures>
+      <childFeatures featureId="IDF3CB21CC02002940EAE4CE551A152CC5" featureName="Tables Handler" featureDescription="Displays FITS tabular data." configurableDirectory="NAJM_TABLESHANDLER_DIR" configurableDirectoryDefaultPath="[APPLICATIONFOLDER]\Handlers\Tables" enableInDefaultInstall="true" enableInMinimalInstall="true" excludeFromBuild="false">
+        <components componentId="ID1031" componentGuid="f46ca944-269d-4bcd-bfb3-7c157c548c9c">
+          <componentFiles fileId="ID_2c81ca3e_4922_41b6_8fc8_2daa96e5552b" srcName="Najm.Handler.Tables.dll" srcDirectory="..\..\Layout\Najm\Handlers\Tables" dstName="Najm.Handler.Tables.dll" dstPath="" isTrueTypeFont="false" isComModule="false" typelibGuid="" menuName="Najm.Handler.Tables" shortcutInProgramFilesMenu="false" shortcutOnDesktop="false" shortcutInQuickLaunch="false" shortcutInStartupFolder="false" shortcutWorkingDirectory="" shortcutCommandArguments="" shortcutDescription="">
+            <service StartWhenInstalled="true" Remove="both" id="ID1030" isService="false" userAccount="" userPassword="" cmdLineArguments="" errorControl="normal" interactive="false" loadOrderGroup="" serviceName="" startMode="auto" vital="true" />
+          </componentFiles>
+          <addToCreateFolder>false</addToCreateFolder>
+        </components>
+        <defaultInstallMode>3</defaultInstallMode>
+      </childFeatures>
+      <childFeatures featureId="IDF65E20DCE33E1B1AB862BF6D60E5EEB9" featureName="IronPython Handler" featureDescription="Allows you to create your own Handler using IronPython script." configurableDirectory="NAJM_IPYTHONHANDLER_DIR" configurableDirectoryDefaultPath="[APPLICATIONFOLDER]\Handlers\IPythonW" enableInDefaultInstall="true" enableInMinimalInstall="true" excludeFromBuild="false">
+        <components componentId="ID1033" componentGuid="adb91d78-f1c1-45cf-9692-58e8d0fea672">
+          <componentFiles fileId="ID_0e013f2e_760c_4799_99bb_ac3fc7d3b902" srcName="IronMath.dll" srcDirectory="..\..\Layout\Najm\Handlers\IPythonW" dstName="IronMath.dll" dstPath="" isTrueTypeFont="false" isComModule="false" typelibGuid="" menuName="IronMath" shortcutInProgramFilesMenu="false" shortcutOnDesktop="false" shortcutInQuickLaunch="false" shortcutInStartupFolder="false" shortcutWorkingDirectory="" shortcutCommandArguments="" shortcutDescription="">
+            <service StartWhenInstalled="true" Remove="both" id="ID1032" isService="false" userAccount="" userPassword="" cmdLineArguments="" errorControl="normal" interactive="false" loadOrderGroup="" serviceName="" startMode="auto" vital="true" />
+          </componentFiles>
+          <addToCreateFolder>false</addToCreateFolder>
+        </components>
+        <components componentId="ID1035" componentGuid="090d8afe-5e50-4f32-87fe-e77d42392439">
+          <componentFiles fileId="ID_fabf35b9_e87b_412f_9f2a_b32047f36489" srcName="IronPython.dll" srcDirectory="..\..\Layout\Najm\Handlers\IPythonW" dstName="IronPython.dll" dstPath="" isTrueTypeFont="false" isComModule="false" typelibGuid="" menuName="IronPython" shortcutInProgramFilesMenu="false" shortcutOnDesktop="false" shortcutInQuickLaunch="false" shortcutInStartupFolder="false" shortcutWorkingDirectory="" shortcutCommandArguments="" shortcutDescription="">
+            <service StartWhenInstalled="true" Remove="both" id="ID1034" isService="false" userAccount="" userPassword="" cmdLineArguments="" errorControl="normal" interactive="false" loadOrderGroup="" serviceName="" startMode="auto" vital="true" />
+          </componentFiles>
+          <addToCreateFolder>false</addToCreateFolder>
+        </components>
+        <components componentId="ID1037" componentGuid="acf93ab2-4820-424b-99bc-cc7e0cd17b57">
+          <componentFiles fileId="ID_7304beb4_7952_4f3c_ab15_72beec4d532b" srcName="Najm.Handler.IPython.dll" srcDirectory="..\..\Layout\Najm\Handlers\IPythonW" dstName="Najm.Handler.IPython.dll" dstPath="" isTrueTypeFont="false" isComModule="false" typelibGuid="" menuName="Najm.Handler.IPython" shortcutInProgramFilesMenu="false" shortcutOnDesktop="false" shortcutInQuickLaunch="false" shortcutInStartupFolder="false" shortcutWorkingDirectory="" shortcutCommandArguments="" shortcutDescription="">
+            <service StartWhenInstalled="true" Remove="both" id="ID1036" isService="false" userAccount="" userPassword="" cmdLineArguments="" errorControl="normal" interactive="false" loadOrderGroup="" serviceName="" startMode="auto" vital="true" />
+          </componentFiles>
+          <addToCreateFolder>false</addToCreateFolder>
+        </components>
+        <defaultInstallMode>3</defaultInstallMode>
+      </childFeatures>
+      <childFeatures featureId="ID56B243CF2BE144DD3651725E54811FAF" featureName="IronPython Sample Handlers" featureDescription="Typical implementation of IronPython Handlers" configurableDirectory="NAJM_IPYTHONSAMPLES_DIR" configurableDirectoryDefaultPath="[APPLICATIONFOLDER]\Handlers\IPythonSamples" enableInDefaultInstall="true" enableInMinimalInstall="true" excludeFromBuild="false">
+        <childFeatures featureId="IDF59C797DCA94890183BFC716A97DA41C" featureName="Table Fields" featureDescription="Lists the names of FITS columns" configurableDirectory="NAJM_SAMPLE_TABLEFIELDS_DIR" configurableDirectoryDefaultPath="[APPLICATIONFOLDER]\Handlers\IPythonSamples\TableFields" enableInDefaultInstall="true" enableInMinimalInstall="true" excludeFromBuild="false">
+          <components componentId="ID1041" componentGuid="641b1125-6783-4a21-9e34-34fecf4770bc">
+            <componentFiles fileId="ID_9089a9b1_d2cf_4984_a191_efca73da7fdf" srcName="TableFields.py" srcDirectory="..\..\Layout\Najm\Handlers\IPythonSamples\TableFields" dstName="TableFields.py" dstPath="" isTrueTypeFont="false" isComModule="false" typelibGuid="" menuName="TableFields" shortcutInProgramFilesMenu="false" shortcutOnDesktop="false" shortcutInQuickLaunch="false" shortcutInStartupFolder="false" shortcutWorkingDirectory="" shortcutCommandArguments="" shortcutDescription="">
+              <service StartWhenInstalled="true" Remove="both" id="ID1040" isService="false" userAccount="" userPassword="" cmdLineArguments="" errorControl="normal" interactive="false" loadOrderGroup="" serviceName="" startMode="auto" vital="true" />
+            </componentFiles>
+            <addToCreateFolder>false</addToCreateFolder>
+          </components>
+          <components componentId="ID1043" componentGuid="94f6c11f-bf15-4ca7-9688-38ff0d2d462f">
+            <componentFiles fileId="ID_883e6c32_75e7_495e_91f5_314dd65460be" srcName="tsi.jpg" srcDirectory="..\..\Layout\Najm\Handlers\IPythonSamples\TableFields" dstName="tsi.jpg" dstPath="" isTrueTypeFont="false" isComModule="false" typelibGuid="" menuName="tsi" shortcutInProgramFilesMenu="false" shortcutOnDesktop="false" shortcutInQuickLaunch="false" shortcutInStartupFolder="false" shortcutWorkingDirectory="" shortcutCommandArguments="" shortcutDescription="">
+              <service StartWhenInstalled="true" Remove="both" id="ID1042" isService="false" userAccount="" userPassword="" cmdLineArguments="" errorControl="normal" interactive="false" loadOrderGroup="" serviceName="" startMode="auto" vital="true" />
+            </componentFiles>
+            <addToCreateFolder>false</addToCreateFolder>
+          </components>
+          <defaultInstallMode>3</defaultInstallMode>
+        </childFeatures>
+        <childFeatures featureId="ID3A0403371E0C4FBA87A86B97374F2E34" featureName="Console" featureDescription="Provides an immediate window for executing IronPython script againest Najm Object Model." configurableDirectory="NAJM_SAMPLE_CONSOLE_DIR" configurableDirectoryDefaultPath="[APPLICATIONFOLDER]\Handlers\IPythonSamples\Console" enableInDefaultInstall="true" enableInMinimalInstall="true" excludeFromBuild="false">
+          <components componentId="ID1045" componentGuid="4cb31567-db36-46eb-a515-4359008bcfa6">
+            <componentFiles fileId="ID_36cae0be_82e1_4a47_ae7b_0eb0f04e7605" srcName="consoleicon.png" srcDirectory="..\..\Layout\Najm\Handlers\IPythonSamples\Console" dstName="consoleicon.png" dstPath="" isTrueTypeFont="false" isComModule="false" typelibGuid="" menuName="consoleicon" shortcutInProgramFilesMenu="false" shortcutOnDesktop="false" shortcutInQuickLaunch="false" shortcutInStartupFolder="false" shortcutWorkingDirectory="" shortcutCommandArguments="" shortcutDescription="">
+              <service StartWhenInstalled="true" Remove="both" id="ID1044" isService="false" userAccount="" userPassword="" cmdLineArguments="" errorControl="normal" interactive="false" loadOrderGroup="" serviceName="" startMode="auto" vital="true" />
+            </componentFiles>
+            <addToCreateFolder>false</addToCreateFolder>
+          </components>
+          <components componentId="ID1047" componentGuid="cda55a57-10fb-4392-bb85-a3a368f16507">
+            <componentFiles fileId="ID_1eb454d0_3748_4dbf_9a54_87ca2b70a9b2" srcName="Console.py" srcDirectory="..\..\Layout\Najm\Handlers\IPythonSamples\Console" dstName="Console.py" dstPath="" isTrueTypeFont="false" isComModule="false" typelibGuid="" menuName="Console" shortcutInProgramFilesMenu="false" shortcutOnDesktop="false" shortcutInQuickLaunch="false" shortcutInStartupFolder="false" shortcutWorkingDirectory="" shortcutCommandArguments="" shortcutDescription="">
+              <service StartWhenInstalled="true" Remove="both" id="ID1046" isService="false" userAccount="" userPassword="" cmdLineArguments="" errorControl="normal" interactive="false" loadOrderGroup="" serviceName="" startMode="auto" vital="true" />
+            </componentFiles>
+            <addToCreateFolder>false</addToCreateFolder>
+          </components>
+          <defaultInstallMode>3</defaultInstallMode>
+        </childFeatures>
+        <childFeatures featureId="ID0FE1743F002EE6C2E6C4B2A704AAC92B" featureName="Cube2GIF" featureDescription="Generates Animated GIF from FITS Cube" configurableDirectory="NAJM_SAMPLE_CUBE2GIF_DIR" configurableDirectoryDefaultPath="[APPLICATIONFOLDER]\Handlers\IPythonSamples\Cube2GIF" enableInDefaultInstall="true" enableInMinimalInstall="true" excludeFromBuild="false">
+          <components componentId="ID2311" componentGuid="7696c193-1c71-412b-b3e1-7061c6f09687">
+            <componentFiles fileId="ID_224677e8_2375_4dfc_bf01_d7b067144581" srcName="AGIF.py" srcDirectory="..\..\Layout\Najm\Handlers\IPythonSamples\Cube2GIF" dstName="AGIF.py" dstPath="" isTrueTypeFont="false" isComModule="false" typelibGuid="" menuName="AGIF" shortcutInProgramFilesMenu="false" shortcutOnDesktop="false" shortcutInQuickLaunch="false" shortcutInStartupFolder="false" shortcutWorkingDirectory="" shortcutCommandArguments="" shortcutDescription="">
+              <service StartWhenInstalled="true" Remove="both" id="ID2310" isService="false" userAccount="" userPassword="" cmdLineArguments="" errorControl="normal" interactive="false" loadOrderGroup="" serviceName="" startMode="auto" vital="true" />
+            </componentFiles>
+            <addToCreateFolder>false</addToCreateFolder>
+          </components>
+          <components componentId="ID2313" componentGuid="b3ab58b5-2e5a-4b3b-81aa-26433de7cb6c">
+            <componentFiles fileId="ID_89e36f33_1309_475f_8c1f_9f80b31c2226" srcName="cube2gif.png" srcDirectory="..\..\Layout\Najm\Handlers\IPythonSamples\Cube2GIF" dstName="cube2gif.png" dstPath="" isTrueTypeFont="false" isComModule="false" typelibGuid="" menuName="cube2gif" shortcutInProgramFilesMenu="false" shortcutOnDesktop="false" shortcutInQuickLaunch="false" shortcutInStartupFolder="false" shortcutWorkingDirectory="" shortcutCommandArguments="" shortcutDescription="">
+              <service StartWhenInstalled="true" Remove="both" id="ID2312" isService="false" userAccount="" userPassword="" cmdLineArguments="" errorControl="normal" interactive="false" loadOrderGroup="" serviceName="" startMode="auto" vital="true" />
+            </componentFiles>
+            <addToCreateFolder>false</addToCreateFolder>
+          </components>
+          <components componentId="ID2315" componentGuid="e93648d8-7d0d-43d2-96b2-c9fea6262c39">
+            <componentFiles fileId="ID_f5fa842f_9ca0_4a77_b914_658951d5a565" srcName="cube2gif.py" srcDirectory="..\..\Layout\Najm\Handlers\IPythonSamples\Cube2GIF" dstName="cube2gif.py" dstPath="" isTrueTypeFont="false" isComModule="false" typelibGuid="" menuName="cube2gif" shortcutInProgramFilesMenu="false" shortcutOnDesktop="false" shortcutInQuickLaunch="false" shortcutInStartupFolder="false" shortcutWorkingDirectory="" shortcutCommandArguments="" shortcutDescription="">
+              <service StartWhenInstalled="true" Remove="both" id="ID2314" isService="false" userAccount="" userPassword="" cmdLineArguments="" errorControl="normal" interactive="false" loadOrderGroup="" serviceName="" startMode="auto" vital="true" />
+            </componentFiles>
+            <addToCreateFolder>false</addToCreateFolder>
+          </components>
+          <components componentId="ID2317" componentGuid="98bd8442-63b3-4532-8b6c-56fa445e25d1">
+            <componentFiles fileId="ID_b4135024_d48f_464f_9cfe_5ab827ffa01e" srcName="ui.py" srcDirectory="..\..\Layout\Najm\Handlers\IPythonSamples\Cube2GIF" dstName="ui.py" dstPath="" isTrueTypeFont="false" isComModule="false" typelibGuid="" menuName="ui" shortcutInProgramFilesMenu="false" shortcutOnDesktop="false" shortcutInQuickLaunch="false" shortcutInStartupFolder="false" shortcutWorkingDirectory="" shortcutCommandArguments="" shortcutDescription="">
+              <service StartWhenInstalled="true" Remove="both" id="ID2316" isService="false" userAccount="" userPassword="" cmdLineArguments="" errorControl="normal" interactive="false" loadOrderGroup="" serviceName="" startMode="auto" vital="true" />
+            </componentFiles>
+            <addToCreateFolder>false</addToCreateFolder>
+          </components>
+          <defaultInstallMode>3</defaultInstallMode>
+        </childFeatures>
+        <components componentId="ID1039" componentGuid="2d998af6-f1f7-4988-acc1-341e4a7a202c">
+          <componentFiles fileId="ID_afe796f4_9e75_4d86_b317_29d2a08b7859" srcName="Najm.IPython.Template.py" srcDirectory="..\..\Layout\Najm\Handlers\IPythonSamples" dstName="Najm.IPython.Template.py" dstPath="" isTrueTypeFont="false" isComModule="false" typelibGuid="" menuName="Najm.IPython.Template" shortcutInProgramFilesMenu="false" shortcutOnDesktop="false" shortcutInQuickLaunch="false" shortcutInStartupFolder="false" shortcutWorkingDirectory="" shortcutCommandArguments="" shortcutDescription="">
+            <service StartWhenInstalled="true" Remove="both" id="ID1038" isService="false" userAccount="" userPassword="" cmdLineArguments="" errorControl="normal" interactive="false" loadOrderGroup="" serviceName="" startMode="auto" vital="true" />
+          </componentFiles>
+          <addToCreateFolder>false</addToCreateFolder>
+        </components>
+        <defaultInstallMode>3</defaultInstallMode>
+      </childFeatures>
+      <defaultInstallMode>0</defaultInstallMode>
+    </childFeatures>
+    <defaultInstallMode>3</defaultInstallMode>
+  </projectFeatures>
+  <projectMergeModules excludeFromBuild="false" srcPath="..\VCRedists\Microsoft_VC90_CRT_x86.msm">
+    <ModuleProperties />
+    <ModuleId>Microsoft_VC90_CRT_x86</ModuleId>
+    <ModuleLanguage>0</ModuleLanguage>
+    <ModuleVersion>9.0</ModuleVersion>
+    <MouleDescription>Installation Database</MouleDescription>
+    <ModuleComments>Copyright (C) Microsoft Corporation, All rights reserved.</ModuleComments>
+    <ModuleManufacturer>Microsoft Corporation</ModuleManufacturer>
+    <ModulePlatforms>;0</ModulePlatforms>
+  </projectMergeModules>
+  <projectInstallForCurrentOrAllUsers>2</projectInstallForCurrentOrAllUsers>
+  <License>
+    <System>true</System>
+    <Name>To Be Decided Later</Name>
+  </License>
+  <projectProperties LicencePath="" TopBanner="..\Resources\banner.bmp" BigBanner="..\Resources\heic0506b.bmp" ExclamationIcon="" InfoIcon="" NewIcon="" UpIcon="" VS2003Integration="VS2003_INTEGRATION" VS2005Integration="VS2005_INTEGRATION" UseRelativePaths="true" LaunchAppText="" UseWixUI_ErrorProgressText="true" UseWixUI="true" CreateUninstallShortcut="false" Codepage="1252" ProductLanguage="1033" AlwaysMajorUpgrade="true" SupressValidation="false" Compress="true" BuildTarget="true" PublisherUrl="http://students.washington.edu/menein/Najm" SupportContact="menein@u.washington.edu" SupportUrl="http://students.washington.edu/menein/Najm" SupportPhone="" ReadMeFile="" UpdateUrl="" Comments="Najm Astronomy Framework" Icon="[NAJM_BIN_DIR]\najm.ico" EmbedCab="true" MaxCabSize="0" CabCompressionLevel="mszip" InstallerVersion="300">
+    <UiCultures Name="en-US" Enabled="true" />
+    <UiCultures Name="de-de" Enabled="false" />
+    <UiCultures Name="es-es" Enabled="false" />
+    <UiCultures Name="nl-nl" Enabled="false" />
+  </projectProperties>
+</WarSetup-Project>
