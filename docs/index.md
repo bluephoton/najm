@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Welcome to Najm
+menu_index: 0
 ---
 
 # About Najm

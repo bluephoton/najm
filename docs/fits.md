@@ -1,6 +1,7 @@
 ---
 layout: default
 title: FITS Library
+menu_index: 1
 ---
 
 # Najm FITS Library

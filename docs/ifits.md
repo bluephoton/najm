@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Najm - FITS Interface
+menu_index: 1
 ---
 
 

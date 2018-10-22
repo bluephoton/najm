@@ -1,6 +1,7 @@
 ---
 layout: default
 title: FITS Handlers
+menu_index: 2
 ---
 
 # Najm Handlers

@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Najm - Acknowledgment
+menu_index: 8
 ---
 
 # Acknowledgment
