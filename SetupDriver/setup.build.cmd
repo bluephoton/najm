@@ -64,6 +64,9 @@ REM >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Handlers\IPythonW <<<<<<<<<<<<<<
 REM
 CALL :XCOPYW %NAJM_VS_BIN_DIR%\Najm.Handler.IPython.dll %NAJM_HANDLERS_DIR%IPythonW\
 CALL :XCOPYW %NAJM_VS_BIN_DIR%\IronPython.dll %NAJM_HANDLERS_DIR%IPythonW\
+CALL :XCOPYW %NAJM_VS_BIN_DIR%\IronPython.Modules.dll %NAJM_HANDLERS_DIR%IPythonW\
+CALL :XCOPYW %NAJM_VS_BIN_DIR%\Microsoft.Dynamic.dll %NAJM_HANDLERS_DIR%IPythonW\
+CALL :XCOPYW %NAJM_VS_BIN_DIR%\Microsoft.Scripting.dll %NAJM_HANDLERS_DIR%IPythonW\
 REM
 REM >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Handlers\IPythonSamples <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 REM

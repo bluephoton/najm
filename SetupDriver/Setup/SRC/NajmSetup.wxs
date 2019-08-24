@@ -239,6 +239,15 @@
                 <Component Id="ID1035" Guid="090d8afe-5e50-4f32-87fe-e77d42392439">
                   <File Id="ID_fabf35b9_e87b_412f_9f2a_b32047f36489" Source="..\..\Layout\Najm\Handlers\IPythonW\IronPython.dll" DiskId="1" Name="IronPython.dll" />
                 </Component>
+                <Component Id="ID1135" Guid="5d654820-2560-4db0-8d08-48070a4acf89">
+                  <File Id="ID_1831b023_414a_49e5_874f_ac6c2ba01e46" Source="..\..\Layout\Najm\Handlers\IPythonW\IronPython.Modules.dll" DiskId="1" Name="IronPython.Modules.dll" />
+                </Component>
+                <Component Id="ID1235" Guid="b7808fd5-9d64-4e40-a64d-e63411084a7e">
+                  <File Id="ID_67898db7_e502_4c02_8630_6212986ee9a3" Source="..\..\Layout\Najm\Handlers\IPythonW\Microsoft.Dynamic.dll" DiskId="1" Name="Microsoft.Dynamic.dll" />
+                </Component>
+                <Component Id="ID1335" Guid="8dee3f55-4a6e-4688-8ebe-e5bb46f6d1ef">
+                  <File Id="ID_05305b50_711e_42d0_84d4_69e5394f20b9" Source="..\..\Layout\Najm\Handlers\IPythonW\Microsoft.Scripting.dll" DiskId="1" Name="Microsoft.Scripting.dll" />
+                </Component>
                 <Component Id="ID1037" Guid="acf93ab2-4820-424b-99bc-cc7e0cd17b57">
                   <File Id="ID_7304beb4_7952_4f3c_ab15_72beec4d532b" Source="..\..\Layout\Najm\Handlers\IPythonW\Najm.Handler.IPython.dll" DiskId="1" Name="Najm.Handler.IPython.dll" />
                 </Component>
@@ -323,6 +332,9 @@
         <Feature Id="IDF65E20DCE33E1B1AB862BF6D60E5EEB9" Title="IronPython Handler" Level="1" Description="Allows you to create your own Handler using IronPython script." InstallDefault="local" ConfigurableDirectory="NAJM_IPYTHONHANDLER_DIR">
           <ComponentRef Id="ID1035" />
           <ComponentRef Id="ID1037" />
+          <ComponentRef Id="ID1135" />
+          <ComponentRef Id="ID1235" />
+          <ComponentRef Id="ID1335" />
         </Feature>
         <Feature Id="ID56B243CF2BE144DD3651725E54811FAF" Title="IronPython Sample Handlers" Level="1" Description="Typical implementation of IronPython Handlers" InstallDefault="local" ConfigurableDirectory="NAJM_IPYTHONSAMPLES_DIR">
           <ComponentRef Id="ID1039" />
