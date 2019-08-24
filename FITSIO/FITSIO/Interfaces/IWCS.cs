@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Najm.LinearAlagebra;
+﻿using Najm.LinearAlagebra;
 
 namespace Najm.FITSIO
 {
