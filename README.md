@@ -1,6 +1,7 @@
 # Najm
+10 years ago this was created, years after it was lost, years after it was found, and her we go in the hope that it might help someone!
 
-### 10 years ago this was created, years after it was lost, years after it was found, and her we go in the hope that it might help someone!
+[Click here to Download](https://github.com/bluephoton/najm/releases/download/v1.0/NajmSetup.msi)
 
 ## Screenshots
 below are some screenshots showing Najm capabilities
